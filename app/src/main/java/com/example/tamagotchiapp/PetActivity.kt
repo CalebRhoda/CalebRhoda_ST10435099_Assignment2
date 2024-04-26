@@ -2,9 +2,13 @@ package com.example.tamagotchiapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
+import kotlin.concurrent.fixedRateTimer
+import kotlin.concurrent.timer
 
 class PetActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,14 +20,58 @@ class PetActivity : AppCompatActivity() {
         val soapyFoam = findViewById<ImageView>(R.id.imageView4)
         val playButton = findViewById<Button>(R.id.playbutton)
         val tennisBall = findViewById<ImageView>(R.id.imageView5)
+        val hungerCount = findViewById<TextView>(R.id.hungerText)
+        val washCount = findViewById<TextView>(R.id.cleanText)
+        val playCount = findViewById<TextView>(R.id.happyText)
+        val millisInFuture = 10000L // Total time for the countdown (in milliseconds)
+        val countDownInterval = 1000L // Interval at which to update the countdown (in milliseconds)
+
+        val hungerCountDown = object : CountDownTimer(millisInFuture, countDownInterval) {
+            override fun onTick(millisUntilFinished: Long) {
+                val secondsRemaining = millisUntilFinished / 1000
+                hungerCount.text = ("$secondsRemaining")
+            }
+            override fun onFinish() {
+            }
+
+
+        }
+        val washCountDown = object : CountDownTimer(millisInFuture, countDownInterval) {
+            override fun onTick(millisUntilFinished: Long) {
+                val secondsRemaining = millisUntilFinished / 1000
+                washCount.text = ("$secondsRemaining")
+            }
+            override fun onFinish() {
+            }
+
+
+        }
+        val playCountDown = object : CountDownTimer(millisInFuture, countDownInterval) {
+            override fun onTick(millisUntilFinished: Long) {
+                val secondsRemaining = millisUntilFinished / 1000
+                playCount.text = ("$secondsRemaining")
+            }
+            override fun onFinish() {
+                // This method is called when the countdown finishes
+            }
+
+        }
+
+
+
+
 
         feedButton.setOnClickListener {
             if (foodBowl.visibility == View.INVISIBLE) {
                 foodBowl.visibility = View.VISIBLE
                 soapyFoam.visibility = View.INVISIBLE
                 tennisBall.visibility = View.INVISIBLE
+                hungerCount.text = "10"
+                hungerCountDown.cancel()
             } else {
                 foodBowl.visibility = View.INVISIBLE
+                hungerCountDown.cancel()
+                hungerCountDown.start()
             }
 
         }
@@ -32,8 +80,12 @@ class PetActivity : AppCompatActivity() {
                 soapyFoam.visibility = View.VISIBLE
                 tennisBall.visibility = View.INVISIBLE
                 foodBowl.visibility = View.INVISIBLE
+                washCount.text = "10"
+                washCountDown.cancel()
             } else {
                 soapyFoam.visibility = View.INVISIBLE
+                washCountDown.cancel()
+                washCountDown.start()
             }
         }
         playButton.setOnClickListener {
@@ -41,11 +93,21 @@ class PetActivity : AppCompatActivity() {
                 tennisBall.visibility = View.VISIBLE
                 foodBowl.visibility = View.INVISIBLE
                 soapyFoam.visibility = View.INVISIBLE
+                playCount.text = "10"
+                playCountDown.cancel()
             } else {
                 tennisBall.visibility = View.INVISIBLE
+                playCountDown.cancel()
+                playCountDown.start()
             }
-        }
 
+
+            }
+        playCountDown.start()
+        washCountDown.start()
+        hungerCountDown.start()
+        }
     }
 
-}
+
+
