@@ -15,15 +15,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.225"
-        app:srcCompat="@drawable/oip" />
+        app:srcCompat="@drawable/oip"
+        android:contentDescription="@string/pet" />
 
     <Button
         android:id="@+id/feedbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:backgroundTint="@color/orange"
-        android:text="Feed"
+        android:backgroundTint="@color/red"
+        android:text="@string/feed"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.083"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,8 +35,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:backgroundTint="@color/orange"
-        android:text="Wash"
+        android:backgroundTint="@color/red"
+        android:text="@string/wash"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,8 +47,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:backgroundTint="@color/orange"
-        android:text="Play"
+        android:backgroundTint="@color/red"
+        android:text="@string/play"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.916"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,7 +59,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="Hunger"
+        android:text="@string/hunger"
         app:layout_constraintEnd_toStartOf="@+id/hungerText"
         app:layout_constraintHorizontal_bias="0.27"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,7 +70,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:text="Clean"
+        android:text="@string/clean"
         app:layout_constraintEnd_toStartOf="@+id/cleanText"
         app:layout_constraintHorizontal_bias="0.321"
         app:layout_constraintStart_toStartOf="parent"
@@ -81,7 +82,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="30dp"
-        android:text="Happy"
+        android:text="@string/happy"
         app:layout_constraintEnd_toStartOf="@+id/hungerText"
         app:layout_constraintHorizontal_bias="0.01"
         app:layout_constraintStart_toStartOf="parent"
@@ -98,7 +99,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.472"
-        app:srcCompat="@drawable/bowl" />
+        app:srcCompat="@drawable/bowl"
+        android:contentDescription="@string/bowl" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -111,7 +113,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.138"
-        app:srcCompat="@drawable/foam" />
+        app:srcCompat="@drawable/foam"
+        android:contentDescription="@string/soap" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -124,14 +127,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.499"
-        app:srcCompat="@drawable/ball" />
+        app:srcCompat="@drawable/ball"
+        android:contentDescription="@string/ball" />
 
     <TextView
         android:id="@+id/hungerText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -141,20 +144,18 @@
         android:id="@+id/cleanText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="95dp"
-        android:layout_marginTop="30dp"
-        android:text="cleanText"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hungerText" />
 
     <TextView
         android:id="@+id/happyText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="95dp"
-        android:layout_marginTop="30dp"
-        android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cleanText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
