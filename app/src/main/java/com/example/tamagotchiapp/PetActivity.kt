@@ -55,7 +55,6 @@ class PetActivity : AppCompatActivity() {
             }
 
             override fun onFinish() {
-                // This method is called when the countdown finishes
             }
 
         }
