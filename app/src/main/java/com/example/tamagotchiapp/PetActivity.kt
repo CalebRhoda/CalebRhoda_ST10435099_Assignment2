@@ -14,6 +14,7 @@ class PetActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pet)
+        // Declarations
         val feedButton = findViewById<Button>(R.id.feedbutton)
         val foodBowl = findViewById<ImageView>(R.id.imageView3)
         val washButton = findViewById<Button>(R.id.washbutton)
@@ -26,6 +27,7 @@ class PetActivity : AppCompatActivity() {
         val millisInFuture = 10000L
         val countDownInterval = 1000L
 
+        // Countdown for each of the values, uses a countdown object
         val hungerCountDown = object : CountDownTimer(millisInFuture, countDownInterval) {
             override fun onTick(millisUntilFinished: Long) {
                 val secondsRemaining = millisUntilFinished / 1000
@@ -61,7 +63,7 @@ class PetActivity : AppCompatActivity() {
 
 
 
-
+        // Button functionality, changes the viewability of the images and updates the countdown
         feedButton.setOnClickListener {
             if (foodBowl.visibility == View.INVISIBLE) {
                 foodBowl.visibility = View.VISIBLE
@@ -105,6 +107,7 @@ class PetActivity : AppCompatActivity() {
 
 
         }
+        // Starts the countdown on each of the values
         playCountDown.start()
         washCountDown.start()
         hungerCountDown.start()
